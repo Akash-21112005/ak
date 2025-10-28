@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form action="login" method="post">
+      <input type="text" name="username" required><br><br>
+        <input type="password" name="password" required><br><br>
+        <input type="submit" value="Login">
+    </form>
+    <%
+        if(request.getParameter("error") != null){
+            out.println("<p style='color:red;'>Invalid Username or Password</p>");
+        }
+        if(request.getParameter("logout") != null){
+            out.println("<p style='color:green;'>You have logged out successfully.</p>");
+        }
+    %>
+</body>
+</html>
